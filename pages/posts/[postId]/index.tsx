@@ -5,6 +5,7 @@ const details = () => {
     const id = router.query.postId;
 
     const [data, setData] = useState<any[]>([]);
+    const [dt, setDt] = useState("");
 
     const fetchData = () => {
       if (!id){
@@ -16,7 +17,15 @@ const details = () => {
         })
         .then((reply) => {
           console.log(reply);
-          setData(reply.posts);
+          setData(reply);
+          const now = new Date();
+          const hours = now.getHours().toString().padStart(2, '0');
+          const minutes = now.getMinutes().toString().padStart(2, '0');
+          const seconds = now.getSeconds().toString().padStart(2, '0');
+
+          const formattedTime = `${hours}:${minutes}:${seconds}`;
+          setDt(formattedTime);
+
         });
     };
 
@@ -26,8 +35,12 @@ const details = () => {
 
 
   return (
-    <main>
-    <h1>{data?.title}</h1>
+  <main>
+    <h1>Post Details Page {data.id}</h1>
+    <p>{dt}</p>
+    
+    <h2>{data.title}</h2>
+    <text>{data.body}</text>
 
   </main>
   )

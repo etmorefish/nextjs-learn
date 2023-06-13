@@ -38,7 +38,3 @@ const posts = () => {
 };
 
 export default posts;
-function getCurrentTime(): React.SetStateAction<string> {
-  throw new Error("Function not implemented.");
-}
-
