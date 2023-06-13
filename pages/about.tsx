@@ -1,8 +1,12 @@
+import RouterButton from '@/components/RouterButton'
 import React from 'react'
 
 const about = () => {
   return (
-    <div>about</div>
+    <main>
+    <h1>About</h1>
+    <RouterButton/>
+  </main>
   )
 }
 

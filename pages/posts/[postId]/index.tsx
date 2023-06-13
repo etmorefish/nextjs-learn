@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import RouterButton from '@/components/RouterButton';
 const details = () => {
     const router = useRouter()
     const id = router.query.postId;
@@ -38,6 +39,7 @@ const details = () => {
   <main>
     <h1>Post Details Page {data.id}</h1>
     <p>{dt}</p>
+    <RouterButton />
     
     <h2>{data.title}</h2>
     <text>{data.body}</text>
